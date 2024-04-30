@@ -42,6 +42,11 @@ vagrant up
    *Note* : The time for this step depends on your computer and Internet speed. On a 2015 MacBook Pro with a 50 Mbps download speed, it took approximately 20 minutes. Ensure a stable Internet connection throughout the process.
    
 5. Once the VM is setup, it already contains the tutorials repo. Then clone this repository and place it under tutorials/tree/master/exercises.
+```
+git clone https://github.com/DISLMcGill/P4.git
+cd P4
+cp multiple_flow_monitor tutorials/tree/master/exercises
+```
 
 
 ### Option2: Setup on Your Local Machine
@@ -94,6 +99,12 @@ bash user-common-bootstrap.sh
 sudo reboot
 ```
 7. After rebooting your machine, you will find that the tutorials repo is already cloned. Then clone this repository and place it under tutorials/tree/master/exercises.
+```
+git clone https://github.com/DISLMcGill/P4.git
+cd P4
+cp multiple_flow_monitor tutorials/tree/master/exercises
+```
+
 
 ### Option3: Setup in a VM and Put Client, Server, and Monitor in to Dockers
 Before proceeding with Option 3, please check if you have already installed Mininet using Option 1 or Option 2. If the installation has been completed, remove Mininet from the previous installation first to avoid conflicts. Alternatively, you can set up Mininet on a different machine.
