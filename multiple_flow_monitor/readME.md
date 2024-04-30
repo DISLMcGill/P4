@@ -40,6 +40,8 @@ cd vm-ubuntu-20.04
 vagrant up
 ```
    *Note* : The time for this step depends on your computer and Internet speed. On a 2015 MacBook Pro with a 50 Mbps download speed, it took approximately 20 minutes. Ensure a stable Internet connection throughout the process.
+   
+5. Once the VM is setup, it already contains the tutorials repo. Then clone this repository and place it under tutorials/tree/master/exercises.
 
 
 ### Option2: Setup on Your Local Machine
@@ -91,6 +93,7 @@ bash user-common-bootstrap.sh
 ```
 sudo reboot
 ```
+7. After rebooting your machine, you will find that the tutorials repo is already cloned. Then clone this repository and place it under tutorials/tree/master/exercises.
 
 ### Option3: Setup in a VM and Put Client, Server, and Monitor in to Dockers
 Before proceeding with Option 3, please check if you have already installed Mininet using Option 1 or Option 2. If the installation has been completed, remove Mininet from the previous installation first to avoid conflicts. Alternatively, you can set up Mininet on a different machine.
@@ -106,7 +109,7 @@ git clone https://github.com/ANTLab-polimi/FOP4.git
 
 ## Test and Run the Project 
 ### For Option1 and Option2
-1. In the project directory, for example the current directory, then run
+1. In the directory tutorials/tree/master/exercises/multiple_flow_monitor, excute
 ```
 sudo make run
 ```
@@ -133,20 +136,21 @@ table_delete flow_register 0
 ```
 
 ### For Option3 with YCSB
-1. To run with YCSB we need to first get all the dockers setup and then used Option3. 
+1. Navigate to FOP4/tree/master/P4_examples/fop4.
+2. To run with YCSB we need to first get all the dockers setup and then used Option3. 
 Dockers are listed in the [google drive](https://drive.google.com/drive/folders/1rG9Tbu0P64-LJdb2ESjVIWjQmZtJSo11)
 
-2. Re-config the docker images in the start.py. For example, replace the current dimage to the image you want to use a different docker.
+3. Re-config the docker images in the start.py. For example, replace the current dimage to the image you want to use a different docker.
 ```
 dsql = net.addDocker('dsql', cls=P4DockerHost, ip='172.17.0.2/24',
                    dimage="sqln", mac="00:00:00:00:00:02")
 ```
-3. Run start.py
+4. Run start.py
 ```
 python3 start.py
 ```
-4. Follow the instructions printed out in the terminal.
-5. If you have trouble starting the services in the dockers.
+5. Follow the instructions printed out in the terminal.
+6. If you have trouble starting the services in the dockers.
 For SQL docker, to start the service by running
 ```
 su mysql 
